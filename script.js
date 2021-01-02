@@ -1,5 +1,5 @@
 fetch(
-  'https://cors-anywhere.herokuapp.com/https://lettera.api.ksfmedia.fi/v3/article/a6282b95-e620-4040-87d1-731fed85a7d6',
+  'http://localhost:3001/',
 )
   .then(function (response) {
     if (response.ok) {
