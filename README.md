@@ -4,13 +4,13 @@
 
 This app uses [this Express proxy server app](https://github.com/danielrlc/express-cors-proxy-server) to make API calls, to avoid CORS issues. Follow the [instructions here](https://github.com/danielrlc/express-cors-proxy-server/blob/main/README.md) to get that app set up.
 
-Then load up `index.js` from this app in your browser.
+Then load up `index.html` from this app in your browser.
 
 ## Project notes
 
 ### Accessibility
 
-Running a Lighthouse test on this page [Trump m√∂ter Biden en sista g√•ng ‚Äì d√§rf√∂r kan nattens debatt avg√∂ra valet](https://www.hbl.fi/artikel/sista-debatten-trump-biden-kan-avgora-valet-vagmastarstaterna-har-overraskat-forr/) flagged up a number of accessibility issues.
+Running a Lighthouse test on [this page](https://www.hbl.fi/artikel/sista-debatten-trump-biden-kan-avgora-valet-vagmastarstaterna-har-overraskat-forr/) flagged up a number of accessibility issues.
 
 #### Issue 1: "Heading elements are not in a sequentially-descending order"
 
@@ -32,9 +32,11 @@ Solution:
 
 Problem:
 
+```html
 <div class="ksf-article-images">
-  <!-- ... image and caption in separate divs, caption in a <p> tag, and empty alt attribute ... -->
+  <!-- ... image and caption in separate divs, caption in a <p> tag, and missing alt attribute ... -->
 </div>
+```
 
 Solution:
 
@@ -45,4 +47,5 @@ Solution:
 </figure>
 ```
 
-Then I added an `alt` attribute to the main image, which was missing it before.
+This follows advice from [<figure>: The Figure with Optional Caption element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+
