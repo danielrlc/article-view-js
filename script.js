@@ -8,10 +8,23 @@ fetch('http://localhost:3001/')
   })
   .then(function (data) {
     console.log(data);
+
     var app = document.querySelector('#app');
     var title = document.createElement('h1');
     title.textContent = data.title;
     app.appendChild(title);
+
+    var figure = document.createElement('figure');
+    app.appendChild(figure);
+    var img = document.createElement('img');
+    img.src = data.listImage.url;
+    img.alt = data.listImage.caption;
+    figure.appendChild(img);
+    var figcaption = document.createElement('figcaption');
+    figcaption.textContent =
+      data.listImage.caption + ' ' + data.listImage.byline.toUpperCase();
+    figure.appendChild(figcaption);
+
     data.body.map((element) => {
       if (element.html) {
         var p = document.createElement('p');
