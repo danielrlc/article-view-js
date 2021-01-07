@@ -10,6 +10,7 @@ fetch('http://localhost:3001/')
     console.log(data);
 
     var app = document.querySelector('#app');
+    app.className = 'article article-container';
     var title = document.createElement('h1');
     title.textContent = data.title;
     app.appendChild(title);
